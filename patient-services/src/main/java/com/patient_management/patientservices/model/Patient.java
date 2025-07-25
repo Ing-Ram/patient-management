@@ -14,7 +14,37 @@ public class Patient {
     private UUID id;
 
     @NotNull
-    private String name;
+    private String firstname;
+
+    @NotNull
+    private String middlename;
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getMiddlename() {
+        return middlename;
+    }
+
+    public void setMiddlename(String middlename) {
+        this.middlename = middlename;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    @NotNull
+    private String lastname;
 
     @NotNull
     @Email
@@ -39,13 +69,7 @@ public class Patient {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getEmail() {
         return email;

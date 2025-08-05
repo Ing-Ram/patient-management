@@ -16,8 +16,26 @@ public class Patient {
     @NotNull
     private String firstname;
 
-    @NotNull
+
     private String middlename;
+
+    @NotNull
+    private String lastname;
+
+    @NotNull
+    @Email
+    @Column(unique = true)
+    private String email;
+
+    @NotNull
+    private String address;
+
+    @NotNull
+    private LocalDate dateOfBirth;
+
+    @NotNull
+    private LocalDate registratedDate;
+
 
     public String getFirstname() {
         return firstname;
@@ -43,23 +61,6 @@ public class Patient {
         this.lastname = lastname;
     }
 
-    @NotNull
-    private String lastname;
-
-    @NotNull
-    @Email
-    @Column(unique = true)
-    private String email;
-
-
-    @NotNull
-    private String address;
-
-    @NotNull
-    private LocalDate dateOfBirth;
-
-    @NotNull
-    private LocalDate registratedDate;
 
     public UUID getId() {
         return id;
@@ -102,10 +103,6 @@ public class Patient {
     public void setRegistratedDate(LocalDate registratedDate) {
         this.registratedDate = registratedDate;
     }
-
-
-
-
 
 
 }

@@ -13,14 +13,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/patients") // http:localhost:4000/patients
 public class PatientController {
-    private PatientService patientService;
+    private final PatientService patientService;
 
     public PatientController(PatientService patientService) {
         this.patientService = patientService;
     }
 
     @GetMapping
-    public ResponseEntity<List<PatientResponseDTO>> getAllPatients() {
+    public ResponseEntity<List<PatientResponseDTO>> getPatients() {
         List<PatientResponseDTO> patients = patientService.getPatients();
         return ResponseEntity.ok().body(patients);
     }
